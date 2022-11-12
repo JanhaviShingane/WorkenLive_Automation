@@ -12,21 +12,18 @@ repositories {
 }
 
 dependencies{
-    compile 'org.testng:testng:6.14.3'
-    implementation group: 'com.dci.dev', name: 'secondlibrary', version: '0.0.1'
-   // api 'org.apache.httpcomponents:httpclient:4.5.7'
-    implementation 'org.apache.poi:poi:5.2.3'
-    implementation "org.apache.commons:commons-lang:5.2.3"
-    implementation 'commons-io:commons-io:2.11.0'
     testImplementation "junit:junit:4.13.2"
+    //
     implementation "com.google.guava:guava:31.1-jre"
-    implementation "org.seleniumhq.selenium:selenium-server:3.141.59"
-    implementation "io.github.bonigarcia:webdrivermanager:5.3.1"
-    implementation "org.testng:testng:7.6.1"
+    implementation "commons-io:commons-io:2.11.0"
+    implementation "org.seleniumhq.selenium:selenium-java:4.6.0"
+    testImplementation "org.testng:testng:7.6.1"
     implementation 'com.aventstack:extentreports:5.0.9'
     implementation 'log4j:log4j:1.2.17'
     implementation 'io.rest-assured:rest-assured:5.2.0'
-    implementation 'org.apache.logging.log4j:log4j-core:2.19.0'
+    implementation "org.apache.logging.log4j:log4j-core:2.19.0"
+    implementation "org.postgresql:postgresql:42.5.0"
+    implementation "com.googlecode.json-simple:json-simple:1.1.1"
 
 
 
