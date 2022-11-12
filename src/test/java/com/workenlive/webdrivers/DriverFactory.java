@@ -2,8 +2,7 @@ package com.workenlive.webdrivers;
 
 public class DriverFactory
 {
-    public static WebDriverImpl selectBrowser(String browser)
-    {
+    public static WebDriverImpl selectBrowser(String browser) {
         WebDriverImpl impl = null;
         if(browser.equals("chrome")) {
             impl = new ChromeDriverClass();

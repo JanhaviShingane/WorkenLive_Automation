@@ -1,31 +1,27 @@
 package com.workenlive.utils;
 
+import com.workenlive.constant.Constant;
+
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
-public class ConfigRead
-{
-    Properties properties;
+public class ConfigRead {
+    private static final Properties properties = new Properties();
 
-    public ConfigRead()
-    {
-        File src = new File("./Configuration/config.properties");
-
+    public ConfigRead() {
         try {
-            FileInputStream fis = new FileInputStream(src);
-            properties = new Properties();
+            InputStream fis = this.getClass().getClassLoader().getResourceAsStream(Constant.configFile);
             properties.load(fis);
-        }catch(Exception e)
+        } catch(Exception e)
         {
             System.out.println("Exception is" + e.getMessage());
         }
     }
 
-    public String getApplicationURL()
-    {
-        String url = properties.getProperty("baseURL");
-        return url;
+
+    public String getApplicationURL() {
+        return properties.getProperty("baseURL");
     }
 
     public String getUsername()

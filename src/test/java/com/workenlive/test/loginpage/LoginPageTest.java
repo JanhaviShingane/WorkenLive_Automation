@@ -1,21 +1,15 @@
 package com.workenlive.test.loginpage;
 
-import com.workenlive.base.BaseClass;
+import com.workenlive.base.TestBase;
 import com.workenlive.module.loginpage.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class LoginPageTest extends BaseClass
-{
-    @Test(priority=1)
-    public void loginTest() throws IOException //InterruptedException
-    {
-        driver.get(baseURL);
-        driver.manage().window().maximize();
-
-        Logger.info("URL is Opened");
+public class LoginPageTest extends TestBase {
+    @Test
+    public void loginTest() throws IOException {
 
         LoginPage lp=new LoginPage(driver);
 

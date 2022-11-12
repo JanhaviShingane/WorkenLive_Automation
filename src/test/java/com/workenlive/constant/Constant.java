@@ -2,9 +2,7 @@ package com.workenlive.constant;
 
 import org.apache.log4j.Logger;
 
-public class Constant
-{
-    {
+public class Constant {
         // Variables declaration
         public static final String repoPanelXpath = "//div[@id='org-repositories']//ul//li//div[contains(@class,'flex-auto')]";
         public static Logger logger = Logger.getLogger("threadLogger");
@@ -15,6 +13,7 @@ public class Constant
         public static final String logsFileDir = "build/logs/";
         public static final String logsFileName = "threadLog.txt";
         public static final String screenshotFileDir = "/build/screenshots/";
+        public static final String configFile = "property-files/config.properties";
         public static final String screenshotFileName = "screenshot.jpg";
         public static final String firefoxBrowser = "Firefox";
         public static final String repositoriesPageTitle = "Django · GitHub";
@@ -37,5 +36,4 @@ public class Constant
         public static final int httpStatusCodeSERVERERROR = 500;
         public static final int httpStatusCodeBADGATEWAY = 502;
         public static final int httpStatusCodeGATEWAYTIMEDOUT = 504;
-    }
 }

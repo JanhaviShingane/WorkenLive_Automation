@@ -11,7 +11,7 @@ public class EmpProfile
 {
     WebDriver ldriver;
 
-    public EmpProfiles(WebDriver rdriver)
+    public EmpProfile(WebDriver rdriver)
     {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
@@ -46,4 +46,6 @@ public class EmpProfile
     }
 
 
+    public void clickEmpEssencial() {
+    }
 }
