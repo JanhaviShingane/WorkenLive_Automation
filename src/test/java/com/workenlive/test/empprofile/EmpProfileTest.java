@@ -1,6 +1,6 @@
 package com.workenlive.test.empprofile;
 
-import com.workenlive.base.BaseClass;
+import com.workenlive.base.TestBase;
 import com.workenlive.module.empprofile.EmpProfile;
 import com.workenlive.module.loginpage.LoginPage;
 import org.testng.Assert;
@@ -8,13 +8,9 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class EmpProfileTest extends BaseClass
-{
-    @Test(priority=1)
-    public void EmpProfile() throws IOException, InterruptedException
-    {
-        driver.get(baseURL);
-        driver.manage().window().maximize();
+public class EmpProfileTest extends TestBase {
+    @Test
+    public void EmpProfile() throws IOException, InterruptedException {
 
         LoginPage lp = new LoginPage(driver);
 
@@ -26,7 +22,7 @@ public class EmpProfileTest extends BaseClass
 
         Thread.sleep(1000);
 
-        EmpProfilePage empess = new EmpProfile()Page(driver);
+        EmpProfile empess = new EmpProfile(driver);
 
         empess.clickEmpEssencial();
         empess.clickEmpManagement();

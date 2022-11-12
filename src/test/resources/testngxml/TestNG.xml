@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="WorkenLive_Automation">
-
-    //<listeners>
-     //   <listener class-name="com.workenlive.utils.Reporting"/>
-    //</listeners>
-
-    <test name="WorkenLiveApp Test">
-        <parameter name="browser" value="chrome"/>
+<suite name = "WorkenLive_Automation">
+    <test name = "WorkenLiveApp Test" parallel = "methods" thread-count = "5">
         <classes>
-            <class name="com.workenlive.test.loginpage.LoginPageTest"/>
+            <class name = "com.workenlive.test.loginpage.LoginPageTest"/>
+            <class name = "com.workenlive.test.empprofile.EmpProfileTest"/>
         </classes>
     </test>
-
 </suite>

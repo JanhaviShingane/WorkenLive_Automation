@@ -10,9 +10,10 @@ import org.testng.ITestResult;
 
 public class ExtentReportManager implements ITestListener {
 
-    ExtentReports extent;
-    ExtentSparkReporter reporter;
-    ExtentTest test;
+    private ExtentReports extent;
+    private ExtentSparkReporter reporter;
+    private ExtentTest test;
+
     //Beforesuite
     public void onStart(ITestContext context) {
         extent = new ExtentReports();
@@ -27,20 +28,25 @@ public class ExtentReportManager implements ITestListener {
 
     //AfterMethod
     public void onTestSuccess(ITestResult result) {
-        test.log(Status.PASS, "Passed: " + result.getClass().getName() + " > " + result.getMethod().getMethodName());
-        test.pass("Test case Passed");
+        test.log(Status.PASS, "Result Status: " + result.getStatus());
+        test.pass(String.valueOf(Status.PASS));
+        extent.flush();
     }
 
     //AfterMethod
     public void onTestFailure(ITestResult result) {
-        test.log(Status.FAIL, "Exception: " + result.getThrowable());
-        test.fail("Test case Failed");
+        test.log(Status.FAIL, "Result Status: " + result.getStatus());
+        test.fail(String.valueOf(Status.FAIL));
+        test.fail(result.getThrowable());
+        extent.flush();
     }
 
     //AfterMethod
     public void onTestSkipped(ITestResult result) {
-        test.log(Status.SKIP, "Skipped: " + result.getThrowable());
-        test.skip("Test case Skipped");
+        test.log(Status.SKIP, "Result Status: " + result.getStatus());
+        test.skip(String.valueOf(Status.SKIP));
+        test.skip(result.getThrowable());
+        extent.flush();
     }
 
     //AfterSuite
