@@ -33,5 +33,6 @@ test {
     useTestNG{
         suites 'src/test/resources/testngxml/TestNG.xml'
     }
-
+    systemProperty "baseURL", System.getProperty("baseURL")
+    systemProperty "browser", System.getProperty("browser")
 }

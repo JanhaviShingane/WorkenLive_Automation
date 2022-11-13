@@ -2,14 +2,13 @@ package com.workenlive.utils;
 
 import com.workenlive.constant.Constant;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class ConfigRead {
+public class ConfigReader {
     private static final Properties properties = new Properties();
 
-    public ConfigRead() {
+    public ConfigReader() {
         try {
             InputStream fis = this.getClass().getClassLoader().getResourceAsStream(Constant.configFile);
             properties.load(fis);
@@ -24,16 +23,24 @@ public class ConfigRead {
         return properties.getProperty("baseURL");
     }
 
-    public String getUsername()
-    {
-        String username = properties.getProperty("username");
-        return username;
+    public String getUsername() {
+        return properties.getProperty("username");
     }
 
-    public String getPassword()
-    {
-        String password = properties.getProperty("password");
-        return password;
+    public String getPassword() {
+        return properties.getProperty("password");
+    }
+
+    public String getDBUrl() {
+        return properties.getProperty("dbUrl");
+    }
+
+    public String getDBUsername() {
+        return properties.getProperty("dbUsername");
+    }
+
+    public String getDBPassword() {
+        return properties.getProperty("dbPassword");
     }
 
     public String getChromepath()
