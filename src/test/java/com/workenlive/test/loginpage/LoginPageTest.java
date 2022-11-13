@@ -1,6 +1,7 @@
 package com.workenlive.test.loginpage;
 
 import com.workenlive.base.TestBase;
+import com.workenlive.base.TestContext;
 import com.workenlive.module.loginpage.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,30 +12,18 @@ public class LoginPageTest extends TestBase {
     @Test
     public void loginTest() throws IOException {
 
-        LoginPage lp=new LoginPage(driver);
+        TestContext.getInstance().getWebDriver().getTitle().equals("Workenlive-Demo");
 
-        lp.setUserName(username);
-        Logger.info("Entered User Name");
-
-        lp.setPassword(password);
-        Logger.info("Entered Password");
-
-        lp.clicksubmit();
-
-        //Thread.sleep(20000);
-
-        driver.getTitle().equals("Workenlive-Demo");
-
-        if(driver.getTitle().equals("Workenlive-Demo"))
+        if(TestContext.getInstance().getWebDriver().getTitle().equals("Workenlive-Demo"))
         {
             Assert.assertTrue(true);
-            Logger.info("TestCase Passed");
+            logger.info("TestCase Passed");
         }
         else
         {
-            captureScreen(driver, "loginTest");
+            captureScreen(TestContext.getInstance().getWebDriver(), "loginTest");
             Assert.assertTrue(false);
-            Logger.info("TestCase Failed");
+            logger.info("TestCase Failed");
         }
     }
 }
